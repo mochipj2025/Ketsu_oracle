@@ -1,7 +1,6 @@
 "use client";
 
 import { CSSProperties, PointerEvent, useCallback, useEffect, useRef, useState } from "react";
-import Image from "next/image";
 
 type DeckSummary = { id: string; label: string; description: string };
 type Manifest = { defaultDeck: string; decks: DeckSummary[] };
@@ -51,6 +50,10 @@ const crossingHeights = [42, -106, 94, -46, 116, -132, 62, -82, 128, -20, 76, -1
 const burstHeights = [-35, -18, 8, -30, 27, -6, 20, -33, 11, 31, -22, 15, -28, 25];
 const SHUFFLE_TO_DEAL_MS = 3800;
 const DEAL_TO_REVEAL_MS = 4650;
+
+function publicAsset(path: string) {
+  return new URL(path.replace(/^\//, ""), document.baseURI).toString();
+}
 
 function cardMotion(index: number): CSSProperties {
   const distance = index - (stack.length - 1) / 2;
@@ -119,7 +122,7 @@ export default function OracleRoom() {
     setIsChangingDeck(true);
     setDrawn([]);
     setPhase("idle");
-    const response = await fetch(`/decks/${id}/deck.json`);
+    const response = await fetch(publicAsset(`decks/${id}/deck.json`));
     if (!response.ok) throw new Error(`Deck load failed: ${id}`);
     const nextDeck = (await response.json()) as Deck;
     setDeck(nextDeck);
@@ -129,7 +132,7 @@ export default function OracleRoom() {
   useEffect(() => {
     let active = true;
     const scheduledTimers = timers.current;
-    fetch("/decks/manifest.json")
+    fetch(publicAsset("decks/manifest.json"))
       .then((response) => response.json())
       .then(async (nextManifest: Manifest) => {
         if (!active) return;
@@ -193,10 +196,10 @@ export default function OracleRoom() {
       <div
         className="room"
         aria-hidden="true"
-        style={deck.roomImage ? { "--room-image": `url(${deck.roomImage})` } as CSSProperties : undefined}
+        style={deck.roomImage ? { "--room-image": `url(${publicAsset(deck.roomImage)})` } as CSSProperties : undefined}
       >
         <div className="room-sky" />
-        {deck.emblemImage && <Image className="room-emblem" src={deck.emblemImage} alt="" width={112} height={112} unoptimized />}
+        {deck.emblemImage && <img className="room-emblem" src={publicAsset(deck.emblemImage)} alt="" width={112} height={112} />}
         <div className="moon-disc" />
         <div className="far-mountains mountain-left" />
         <div className="far-mountains mountain-right" />
@@ -285,7 +288,7 @@ export default function OracleRoom() {
           <div className="threshold-door left" />
           <div className="threshold-door right" />
           <div className="threshold-content">
-            <Image src={deck.emblemImage ?? deck.backImage} alt="ケツ印の家紋" width={190} height={190} unoptimized />
+            <img src={publicAsset(deck.emblemImage ?? deck.backImage)} alt="ケツ印の家紋" width={190} height={190} />
             <p>此処より先、{deck.roomName}</p>
             <h2>重いものを<br />ひとつ置いてゆけ。</h2>
             <button onClick={() => setEntered(true)}>{deck.roomName}へ入る <span>→</span></button>
@@ -306,8 +309,8 @@ function CardBack({ deck }: { deck: Deck }) {
   return (
     <div className="card-back">
       <div className="back-frame">
-        <Image className="back-art" src={deck.backImage} alt="" width={180} height={180} unoptimized />
-        {deck.emblemImage && <Image className="back-emblem" src={deck.emblemImage} alt="" width={140} height={140} unoptimized />}
+        <img className="back-art" src={publicAsset(deck.backImage)} alt="" width={180} height={180} />
+        {deck.emblemImage && <img className="back-emblem" src={publicAsset(deck.emblemImage)} alt="" width={140} height={140} />}
         <span>{deck.name}</span>
       </div>
     </div>
@@ -327,7 +330,7 @@ function ReadingCard({ card, index }: { card: DrawnCard; index: number }) {
           <div className={`result-front palette-${card.palette ?? "image"} ${categoryClass}`}>
             {card.image ? (
               <>
-                <Image className={`card-art ${card.reversed ? "reversed" : ""}`} src={card.image} alt={`${card.name}のカード`} fill sizes="210px" unoptimized />
+                <img className={`card-art ${card.reversed ? "reversed" : ""}`} src={publicAsset(card.image)} alt={`${card.name}のカード`} />
                 {card.category && (
                   <div className="oracle-face" aria-hidden="true">
                     <div className="face-topline">

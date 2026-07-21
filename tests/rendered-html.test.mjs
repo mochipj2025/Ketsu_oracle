@@ -1,32 +1,13 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 
-const developmentPreviewMeta =
-  /<meta(?=[^>]*\bname=["']codex-preview["'])(?=[^>]*\bcontent=["']development["'])[^>]*>/i;
-
-async function render() {
-  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
-  workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
-  const { default: worker } = await import(workerUrl.href);
-
-  return worker.fetch(
-    new Request("http://localhost/", { headers: { accept: "text/html" } }),
-    { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
-    { waitUntil() {}, passThroughOnException() {} },
-  );
-}
-
-test("renders the oracle room shell", async () => {
-  const response = await render();
-  assert.equal(response.status, 200);
-  assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
-
-  const html = await response.text();
-  assert.match(html, developmentPreviewMeta);
+test("builds a standalone static oracle app", async () => {
+  const html = await readFile(new URL("../dist-pages/index.html", import.meta.url), "utf8");
   assert.match(html, /<title>尻ノ間｜3Dオラクル・プロトタイプ<\/title>/i);
-  assert.match(html, /神域を整えています/);
-  assert.doesNotMatch(html, /Your site is taking shape|Building your site/);
+  assert.match(html, /<div id="root"><\/div>/i);
+  await access(new URL("../dist-pages/decks/manifest.json", import.meta.url));
+  await access(new URL("../dist-pages/decks/ketsu-six-prototype/01-tokowaka-momoki-hime.webp", import.meta.url));
 });
 
 test("keeps engine, deck data, and themes independently replaceable", async () => {
@@ -40,6 +21,7 @@ test("keeps engine, deck data, and themes independently replaceable", async () =
   ]);
 
   assert.match(engine, /shuffleAndDraw/);
+  assert.match(engine, /publicAsset/);
   assert.match(engine, /drawCount/);
   assert.match(engine, /selectOption|<select/);
   assert.match(css, /\.phase-shuffling/);
