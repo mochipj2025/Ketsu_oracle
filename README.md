@@ -45,6 +45,8 @@ npm run dev -- --port 5173
 
 第一神殿を6柱・18枚へ拡張するための属性設計は、[六神キャラクター属性設計](./docs/character-attributes.md) にまとめています。
 
+個別制作： [第一柱・常若桃樹姫命の三面図と三札](./docs/deities/01-tokowaka-momoki-hime.md)
+
 ## 確認コマンド
 
 ```powershell
