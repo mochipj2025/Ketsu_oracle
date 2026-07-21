@@ -1,0 +1,50 @@
+name: Build GitHub Pages site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "app/**"
+      - "web/**"
+      - "public/**"
+      - "package.json"
+      - "package-lock.json"
+      - "vite.config.ts"
+      - "tsconfig.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages-build
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Build static app
+        run: npm run build:pages
+      - name: Update published root
+        shell: bash
+        run: |
+          rm -rf assets decks rooms
+          cp dist-pages/index.html index.html
+          cp dist-pages/favicon.svg favicon.svg
+          cp dist-pages/.nojekyll .nojekyll
+          cp -R dist-pages/assets dist-pages/decks dist-pages/rooms .
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html favicon.svg .nojekyll assets decks rooms
+          git diff --cached --quiet || git commit -m "Build GitHub Pages site"
+          git push

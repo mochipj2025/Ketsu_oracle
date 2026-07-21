@@ -10,6 +10,11 @@ test("builds a standalone static oracle app", async () => {
   await access(new URL("../dist-pages/decks/ketsu-six-prototype/01-tokowaka-momoki-hime.webp", import.meta.url));
 });
 
+test("keeps GitHub Pages source separate from the generated root page", async () => {
+  const source = await readFile(new URL("../web/index.html", import.meta.url), "utf8");
+  assert.match(source, /src="\/src\/main\.tsx"/);
+});
+
 test("keeps engine, deck data, and themes independently replaceable", async () => {
   const [engine, css, manifest, sixCards, ketsu, kikorot] = await Promise.all([
     readFile(new URL("../app/oracle-room.tsx", import.meta.url), "utf8"),

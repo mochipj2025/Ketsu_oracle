@@ -1,0 +1,20 @@
+{
+  "defaultDeck": "ketsu-six-prototype",
+  "decks": [
+    {
+      "id": "ketsu-six-prototype",
+      "label": "ケツオラクル（六札）",
+      "description": "二柱の神札・魂札・行札、最初の六枚。"
+    },
+    {
+      "id": "ketsu-placeholder",
+      "label": "ケツオラクル（仮）",
+      "description": "和の神域と、ケツに効く一言。"
+    },
+    {
+      "id": "kikorot-sample",
+      "label": "キコロット（見本）",
+      "description": "既存カードを使った差し替え確認用。"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import OracleRoom from "../app/oracle-room";
-import "../app/globals.css";
+import OracleRoom from "../../app/oracle-room";
+import "../../app/globals.css";
 
 const root = document.getElementById("root");
 
