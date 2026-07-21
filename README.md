@@ -47,6 +47,8 @@ npm run dev -- --port 5173
 
 個別制作： [第一柱・常若桃樹姫命の三面図と三札](./docs/deities/01-tokowaka-momoki-hime.md)
 
+個別制作： [第二柱・須佐雷鎚命の三面図と三札](./docs/deities/02-susaraizuchi.md)
+
 ## 確認コマンド
 
 ```powershell
