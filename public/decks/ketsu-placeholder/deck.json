@@ -1,0 +1,28 @@
+{
+  "id": "ketsu-placeholder",
+  "name": "ケツオラクル",
+  "roomName": "尻ノ間",
+  "eyebrow": "KETSU ORACLE / PROTOTYPE",
+  "tagline": "重い腰に、神託を。",
+  "intro": "息をひとつ整えたら、いま抱えている重さを思い浮かべてください。答えは、だいたい尻のすぐ後ろにあります。",
+  "theme": "ketsu",
+  "backImage": "/decks/ketsu-placeholder/back-v1.png",
+  "emblemImage": "/decks/ketsu-placeholder/crest.png",
+  "roomImage": "/rooms/ketsu/shiri-no-ma-background-v1.png",
+  "jumpChance": 0.18,
+  "allowReversed": false,
+  "cards": [
+    {"id":"k01","number":"壱","name":"腰ヲ上ゲヨ","deity":"猿田彦命","symbol":"道","keywords":["始動","道開き","一歩"],"message":"完璧な地図はまだいらない。まず尻を椅子から三寸だけ離せ。道は、そのあと現れる。","palette":"vermilion"},
+    {"id":"k02","number":"弐","name":"ケツヲ据エヨ","deity":"大国主命","symbol":"結","keywords":["腹を決める","縁","定着"],"message":"逃げ道を探す頭を、いったん休ませよう。ここに座ると決めた時、散っていた力が戻ってくる。","palette":"indigo"},
+    {"id":"k03","number":"参","name":"尻込ムナ","deity":"天宇受売命","symbol":"舞","keywords":["大胆さ","笑い","解放"],"message":"恥ずかしさは、動き出す直前の鈴の音。少しくらい滑稽なほうが、場はひらく。","palette":"peach"},
+    {"id":"k04","number":"肆","name":"ケツニ火ヲ灯セ","deity":"火之迦具土神","symbol":"火","keywords":["熱","締切","集中"],"message":"ぬるい決意では温まらない。今日ひとつだけ、終わるまで立たない仕事を決めよ。","palette":"ember"},
+    {"id":"k05","number":"伍","name":"ケツハ持チ上ガル","deity":"天照大御神","symbol":"照","keywords":["回復","光","再起"],"message":"重さは永遠ではない。障子を一枚あけるように、小さな光の入る選択をして。","palette":"gold"},
+    {"id":"k06","number":"陸","name":"ケツヲ洗エ","deity":"瀬織津姫","symbol":"祓","keywords":["浄化","区切り","水"],"message":"昨日の失敗を今日の尻に貼りつけるな。流して、拭いて、まっさらな顔で座り直せ。","palette":"aqua"},
+    {"id":"k07","number":"漆","name":"ケツヲ貸スナ","deity":"素戔嗚尊","symbol":"境","keywords":["境界線","自尊","拒否"],"message":"優しさと明け渡しは別物。あなたの席を守るための『否』は、立派な神事である。","palette":"storm"},
+    {"id":"k08","number":"捌","name":"ケツデ笑エ","deity":"天宇受売命","symbol":"笑","keywords":["ユーモア","転換","祝祭"],"message":"深刻さで固まった場には、尻から風穴を。笑える角度をひとつ見つければ、運は動く。","palette":"festival"},
+    {"id":"k09","number":"玖","name":"ケツヲ休メヨ","deity":"月読命","symbol":"月","keywords":["休息","静寂","内省"],"message":"動けないのではなく、満ち欠けの途中かもしれない。今夜は成果より回復を選べ。","palette":"moon"},
+    {"id":"k10","number":"拾","name":"ケツヲ括レ","deity":"建御雷神","symbol":"雷","keywords":["決断","覚悟","突破"],"message":"迷いを消してから進む必要はない。震えたままでも、括った尻は前を向く。","palette":"thunder"},
+    {"id":"k11","number":"拾壱","name":"ケツヲ並ベヨ","deity":"少彦名命","symbol":"協","keywords":["協力","相談","仲間"],"message":"ひとり分の尻では塞げない穴もある。隣に座ってほしい相手へ、短く声をかけよ。","palette":"moss"},
+    {"id":"k12","number":"拾弐","name":"ケツハ知ッテイル","deity":"思金神","symbol":"智","keywords":["直感","知恵","本音"],"message":"頭の会議が長すぎる。最初に身体が少し軽くなった案を、今日の答えとして採用せよ。","palette":"violet"}
+  ]
+}
