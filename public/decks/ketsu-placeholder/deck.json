@@ -6,9 +6,9 @@
   "tagline": "重い腰に、神託を。",
   "intro": "息をひとつ整えたら、いま抱えている重さを思い浮かべてください。答えは、だいたい尻のすぐ後ろにあります。",
   "theme": "ketsu",
-  "backImage": "/decks/ketsu-placeholder/back-v1.png",
-  "emblemImage": "/decks/ketsu-placeholder/crest.png",
-  "roomImage": "/rooms/ketsu/shiri-no-ma-background-v1.png",
+  "backImage": "/decks/ketsu-placeholder/back-v1.webp",
+  "emblemImage": "/decks/ketsu-placeholder/crest.webp",
+  "roomImage": "/rooms/ketsu/shiri-no-ma-background-v1.webp",
   "jumpChance": 0.18,
   "allowReversed": false,
   "cards": [

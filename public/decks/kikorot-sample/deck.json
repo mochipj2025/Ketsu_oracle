@@ -6,15 +6,15 @@
   "tagline": "カード差し替え動作の見本。",
   "intro": "既存のキコロットカード6枚を読み込み、同じシャッフル機構と結果表示を別テーマで確認します。",
   "theme": "kikorot",
-  "backImage": "/decks/kikorot-sample/back.png",
+  "backImage": "/decks/kikorot-sample/back.webp",
   "jumpChance": 0.18,
   "allowReversed": true,
   "cards": [
-    {"id":"0","number":"0","name":"愚者","deity":"THE FOOL","image":"/decks/kikorot-sample/0.png","keywords":["はじまり","自由","直感"],"message":"まだ形になっていない可能性が動き出しています。完璧な準備より、小さな一歩を信じてみて。"},
-    {"id":"1","number":"I","name":"魔術師","deity":"THE MAGICIAN","image":"/decks/kikorot-sample/1.png","keywords":["意志","創造","実行"],"message":"手元にあるものを組み合わせる時です。思っているより、あなたには使える道具があります。"},
-    {"id":"2","number":"II","name":"女教皇","deity":"THE HIGH PRIESTESS","image":"/decks/kikorot-sample/2.png","keywords":["静けさ","洞察","秘密"],"message":"急いで答えを出すより、心の奥にある違和感を聞いてください。沈黙の中にヒントがあります。"},
-    {"id":"3","number":"III","name":"女帝","deity":"THE EMPRESS","image":"/decks/kikorot-sample/3.png","keywords":["実り","愛情","育成"],"message":"育ててきたものが少しずつ満ちていきます。自分にも、やさしい手入れを向けてください。"},
-    {"id":"4","number":"IV","name":"皇帝","deity":"THE EMPEROR","image":"/decks/kikorot-sample/4.png","keywords":["安定","責任","境界"],"message":"流れに任せるだけでなく、守る線を決めると強くなれます。土台を整える日です。"},
-    {"id":"5","number":"V","name":"教皇","deity":"THE HIEROPHANT","image":"/decks/kikorot-sample/5.png","keywords":["学び","信頼","助言"],"message":"ひとりで抱えすぎなくて大丈夫。経験者の言葉や、受け継がれた知恵が助けになります。"}
+    {"id":"0","number":"0","name":"愚者","deity":"THE FOOL","image":"/decks/kikorot-sample/0.webp","keywords":["はじまり","自由","直感"],"message":"まだ形になっていない可能性が動き出しています。完璧な準備より、小さな一歩を信じてみて。"},
+    {"id":"1","number":"I","name":"魔術師","deity":"THE MAGICIAN","image":"/decks/kikorot-sample/1.webp","keywords":["意志","創造","実行"],"message":"手元にあるものを組み合わせる時です。思っているより、あなたには使える道具があります。"},
+    {"id":"2","number":"II","name":"女教皇","deity":"THE HIGH PRIESTESS","image":"/decks/kikorot-sample/2.webp","keywords":["静けさ","洞察","秘密"],"message":"急いで答えを出すより、心の奥にある違和感を聞いてください。沈黙の中にヒントがあります。"},
+    {"id":"3","number":"III","name":"女帝","deity":"THE EMPRESS","image":"/decks/kikorot-sample/3.webp","keywords":["実り","愛情","育成"],"message":"育ててきたものが少しずつ満ちていきます。自分にも、やさしい手入れを向けてください。"},
+    {"id":"4","number":"IV","name":"皇帝","deity":"THE EMPEROR","image":"/decks/kikorot-sample/4.webp","keywords":["安定","責任","境界"],"message":"流れに任せるだけでなく、守る線を決めると強くなれます。土台を整える日です。"},
+    {"id":"5","number":"V","name":"教皇","deity":"THE HIEROPHANT","image":"/decks/kikorot-sample/5.webp","keywords":["学び","信頼","助言"],"message":"ひとりで抱えすぎなくて大丈夫。経験者の言葉や、受け継がれた知恵が助けになります。"}
   ]
 }
