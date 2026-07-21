@@ -41,6 +41,10 @@ npm run dev -- --port 5173
 
 詳しい項目は [TEMPLATE_GUIDE.md](./TEMPLATE_GUIDE.md) を参照してください。
 
+## キャラクター設計
+
+第一神殿を6柱・18枚へ拡張するための属性設計は、[六神キャラクター属性設計](./docs/character-attributes.md) にまとめています。
+
 ## 確認コマンド
 
 ```powershell
