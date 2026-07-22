@@ -55,6 +55,15 @@ function publicAsset(path: string) {
   return new URL(path.replace(/^\//, ""), document.baseURI).toString();
 }
 
+function shuffleCards<T>(cards: readonly T[]) {
+  const shuffled = [...cards];
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex]!, shuffled[index]!];
+  }
+  return shuffled;
+}
+
 function cardMotion(index: number): CSSProperties {
   const distance = index - (stack.length - 1) / 2;
   const scatterX = distance * 42;
@@ -126,6 +135,11 @@ export default function OracleRoom() {
     if (!response.ok) throw new Error(`Deck load failed: ${id}`);
     const nextDeck = (await response.json()) as Deck;
     setDeck(nextDeck);
+    nextDeck.cards.forEach((card) => {
+      if (!card.image) return;
+      const image = new Image();
+      image.src = publicAsset(card.image);
+    });
     setIsChangingDeck(false);
   }, []);
 
@@ -160,7 +174,7 @@ export default function OracleRoom() {
     setDrawn([]);
     setPhase("shuffling");
 
-    const shuffled = [...deck.cards].sort(() => Math.random() - 0.5);
+    const shuffled = shuffleCards(deck.cards);
     const jump = Math.random() < deck.jumpChance;
     const selected: DrawnCard[] = shuffled.slice(0, drawCount).map((card, index) => ({
       ...card,
@@ -298,7 +312,7 @@ export default function OracleRoom() {
       )}
 
       <footer>
-        <p>PROTOTYPE 01 — CSS 3D / DATA-DRIVEN DECK</p>
+        <p>FIRST SHRINE — CSS 3D / DATA-DRIVEN DECK</p>
         <button onClick={() => setEntered(false)}>入口へ戻る</button>
       </footer>
     </main>

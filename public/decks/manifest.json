@@ -1,10 +1,10 @@
 {
-  "defaultDeck": "ketsu-six-prototype",
+  "defaultDeck": "ketsu-first-shrine",
   "decks": [
     {
-      "id": "ketsu-six-prototype",
-      "label": "ケツオラクル（六札）",
-      "description": "二柱の神札・魂札・行札、最初の六枚。"
+      "id": "ketsu-first-shrine",
+      "label": "ケツオラクル（第一神殿・十八札）",
+      "description": "六柱の神札・魂札・行札、第一神殿の十八枚。"
     },
     {
       "id": "ketsu-placeholder",
