@@ -49,6 +49,8 @@ npm run dev -- --port 5173
 
 個別制作： [第二柱・須佐雷鎚命の三面図と三札](./docs/deities/02-susaraizuchi.md)
 
+6柱すべての制作状況は [第一神殿・六柱一覧](./docs/deities/) を参照してください。
+
 ## 確認コマンド
 
 ```powershell
